@@ -1,0 +1,166 @@
+@use '../utilities/mixins';
+
+.header {
+    display: grid;
+    align-items: center;
+}
+
+.aside {
+
+    &-header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+
+    &-list {
+        gap: 40px;
+
+        @include mixins.phone {
+            display: none;
+        }
+
+        @include mixins.desktop {
+            display: flex;
+        }
+
+        &-item-link {
+
+            @include mixins.nav-list-mobile {
+                display: block;
+            }
+        }
+    }
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-heading {
+        margin-bottom: 20px;
+    }
+}
+
+.heading-decoration {
+    display: block;
+}
+
+.menu-category-section-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.menu-category-section-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reservations-form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.reservations-form-input-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-nav-list {
+    display: flex;
+    gap: 20px;
+    @include mixins.phone {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.footer-bottom {
+    display: flex;
+
+    @include mixins.phone {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.footer-social-list {
+    display: flex;
+}
+
+.footer-social-list-item-link {
+    display: block;
+}
+
+.footer-social-list-item-link-logo {
+    display: block;
+}
+
+.about-us {
+    .heading-container {
+        grid-column: 1 / 9;
+        grid-row: 1;
+    }
+
+    &-img {
+        grid-column: 1 / 5;
+        max-height: 570px;
+        grid-row: 2;
+        justify-self: flex-end;
+    }
+
+    &-story {
+        grid-column: 5 / 9;
+        grid-row: 2;
+        
+        @include mixins.tablet {
+            margin-left: 20px;
+        }
+
+        @include mixins.desktop {
+            margin-left: 32px;
+        }
+    }
+
+    @include mixins.tablet {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+.location {
+
+    @include mixins.tablet {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+
+        .heading-container {
+            grid-column: 1 / 9;
+            grid-row: 1;
+        }
+
+        &-img {
+            grid-column: 5 / 9;
+            grid-row: 2;
+        }
+
+        &-details-container {
+            grid-column: 1 / 5;
+            grid-row: 2;
+        }
+    }
+}
