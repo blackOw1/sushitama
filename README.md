@@ -1,3 +1,3 @@
 # sushitama
 
-A sushi website. Designed and coded by me.
+A responsive sushi website. Designed and coded by me.
