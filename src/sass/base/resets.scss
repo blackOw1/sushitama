@@ -1,0 +1,29 @@
+// @use '../utilities/colors';
+// @use '../utilities/fonts';
+@use '../utilities';
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+}
+
+table {
+    border: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+}
+
+* {
+    font-family: utilities.$font-primary;
+}

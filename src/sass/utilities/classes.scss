@@ -1,0 +1,23 @@
+.backdrop {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.drawer-open {
+    transform: translateX(0) !important;
+}
+
+.backdrop-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.pad-64 {
+    padding-top: 64px;
+}

@@ -1,0 +1,349 @@
+// @use '../utilities/colors';
+// @use '../utilities/mixins';
+@use '../utilities';
+
+.body {
+    overflow-x: hidden;
+    position: relative;
+}
+
+.nav-list,
+.footer-nav-list,
+.footer-social-list {
+    list-style-type: none;
+}
+
+.nav-list-item-link,
+.footer-nav-list-item-link,
+.footer-social-list-item-link {
+    text-decoration: none;
+}
+
+.header {
+    width: 100%;
+    height: 64px;
+    background-color: utilities.$black;
+    padding: 0 80px;
+    z-index: 1;
+
+    &.sticky {
+        position: fixed;
+    }
+
+    @include utilities.phone {
+        padding: 0 20px;
+    }
+
+    @include utilities.desktop {
+        padding: 0 80px;
+    }
+}
+
+.backdrop {
+    position: fixed;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    background-color: rgba(utilities.$black, 0.64);
+    @include utilities.transition;
+}
+
+.aside {
+    position: fixed;
+    z-index: 3;
+    right: 0;
+    width: 248px;
+    height: 100vh;
+    background-color: utilities.$black;
+    transform: translateX(100%);
+    @include utilities.transition;
+
+    &-header {
+        width: 100%;
+        height: 64px;
+        padding: 0 20px;
+    }
+
+    .nav-list-item {
+        padding: 20px 40px;
+        width: 100%;
+
+        &-link {
+            @include utilities.nav-list-mobile {
+                width: -moz-fit-content;
+                width: fit-content;
+            }
+        }
+    }
+}
+
+.hero {
+    margin-bottom: 20px;
+    @include utilities.desktop {
+        margin-bottom: 40px;
+    }
+
+    width: 100%;
+    // height: calc(100vh - 4rem);
+    height: calc(100vh - 64px);
+    background-image: url('../img/hero-sm.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: utilities.$black;
+
+    &.h-100vh {
+        height: 100vh;
+    }
+
+    @include utilities.tablet {
+        background-image: url('../img/hero-md.jpg');
+    }
+
+    @include utilities.desktop {
+        background-image: url('../img/hero-lg.jpg');
+    }
+
+    &-content {
+        max-width: 1160px;
+        padding: 0 20px;
+
+        @include utilities.desktop-hd {
+            padding: 0 80px;
+        }
+    }
+}
+
+.wrapper {
+    max-width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    @include utilities.desktop-hd {
+        padding: 0 80px;
+    }
+}
+
+.heading-container {
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.heading {
+
+    &-decoration {
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+}
+
+.menu,
+.about-us,
+// .location,
+.reservations,
+.footer {
+    padding: 20px 0;
+
+    @include utilities.desktop {
+        padding: 40px 0;
+    }
+}
+
+.location {
+    padding: 20px 0 40px;
+
+    @include utilities.desktop {
+        padding: 40px 0 80px;
+    }
+}
+
+.menu-category {
+    margin-bottom: 30px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.menu-category-heading {
+    margin-bottom: 1rem;
+}
+
+.menu-category-section {
+    width: 100%;
+    max-width: 282px;
+    height: 69px;
+
+    &-item {
+        margin-bottom: 4px;
+    }
+
+    &-item-description {
+        width: calc(100% - 52px);
+    }
+}
+
+.about-us-img {
+    background-image: url('../img/about-hq.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    
+    @include utilities.tablet {
+        max-width: 486px;
+    }
+
+    @include utilities.desktop-hd {
+        height: 500px;
+
+    }
+}
+
+.about-us-img,
+.location-img {
+    width: 100%;
+    min-height: 400px;
+    background-color: utilities.$black;
+    border-radius: 4px;
+}
+
+.location-img {
+    background-image: url(../img/map.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.about-us-story-heading {
+    margin-bottom: 16px;
+    margin-top: 20px;
+
+    @include utilities.tablet {
+        margin-top: 0;
+    }
+}
+
+.about-us-story-paragraph {
+    margin-bottom: 40px;
+}
+
+.location-details-heading {
+    margin-bottom: 16px;
+    margin-top: 20px;
+}
+
+.hours-table {
+    width: 100%;
+    max-width: 339px;
+
+    &-hours {
+        text-align: right;
+    }
+
+    &-day,
+    &-hours {
+        padding: 0 0 16px;
+    }
+}
+
+.reservations {
+    z-index: -1;
+    background-color: utilities.$black;
+
+    .heading {
+        position: relative;
+        z-index: 0;
+
+        &-decoration {
+            z-index: 0;
+        }
+    }
+
+    &-form {
+        @include utilities.tablet-sm {
+            width: 354px;
+            margin: 0 auto;
+        }
+    }
+
+    &-form-inputs {
+        margin-bottom: 30px;
+    }
+}
+
+.form-heading {
+    margin-bottom: 16px;
+}
+
+.form-input {
+    height: 48px;
+    outline: none;
+    padding: 13.5px 16px;
+
+    @include utilities.transition;
+    border-radius: 4px;
+}
+
+.footer {
+    width: 100%;
+
+    @include utilities.phone {
+        padding: 20px 0 40px;
+    }
+
+    .wrapper {
+
+        @include utilities.desktop-hd {
+            padding: 0;
+            max-width: 1200px;
+        }
+    }
+
+    &-nav {
+        padding: 0 0 20px;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+    }
+
+    &-nav-list-item {
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &-bottom {
+        margin-top: 20px;
+    }
+
+    &-copyright {
+        margin-bottom: 20px;
+    }
+
+    &-social-list-item-link {
+        padding: 16px;
+    }
+
+    &-social-list-item-link-logo {
+        width: 20px;
+        height: 20px;
+    }
+
+    &-social-list-item-link:hover {
+        .path {
+            fill: utilities.$primary !important;
+        }
+    }
+}
+
+.path,
+.nav-list-item-link,
+.footer-nav-list-item-link {
+    @include utilities.transition;
+}

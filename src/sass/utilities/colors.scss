@@ -1,0 +1,133 @@
+@use 'mixins';
+
+$primary: #DE2F2F;
+$secondary: #37474f;
+$black: #000;
+$almost-black: #161616;
+$slightly-black: #323232;
+$white: #fff;
+$almost-white: #fafafa;
+
+body {
+    background-color: $almost-white;
+}
+
+h2,
+h3 {
+    color: $secondary;
+}
+
+h4,
+.about-us-story-paragraph,
+.hours-table-day {
+    color: rgba($secondary, 0.72);
+}
+
+.menu-category-section-item-description,
+.location-details-address,
+.hours-table-hours {
+    color: rgba($secondary, 0.48);
+}
+
+.menu-category-section-item-cost {
+    color: rgba($secondary, 0.64);
+}
+
+.reservations .heading,
+.form-heading,
+.reservation-form-btn {
+    color: rgba($white, 0.87);
+}
+
+.btn,
+.hero-heading,
+.nav-list-item-link {
+    color: $white;
+}
+
+.btn:hover,
+.nav-list-item-link.btn:hover,
+.reservation-form-btn:hover {
+    background-color: $primary;
+    border-color: $primary !important;
+    color: $white;
+}
+
+.aside {
+    .nav-list-item {
+        cursor: pointer;
+    }
+    .nav-list-item:hover > .nav-list-item-link {
+        color: $primary;
+    }
+    .nav-list-item:last-child:hover > .nav-list-item-link.btn {
+        background-color: $primary;
+        border-color: $primary !important;
+        color: $white;
+    }
+}
+
+.heading-decoration {
+    color: rgba($secondary, 0.04);
+}
+
+.nav-list {
+    @include mixins.nav-list-mobile {
+        background-color: $black;
+    }
+}
+
+.reservations {
+    .heading {
+
+        &-decoration {
+            color: rgba($white, 0.08);
+        }
+    }
+}
+
+.reservation-form-btn {
+    border-color: rgba($white, 0.60);
+}
+
+.form-input {
+    &[type="text"],
+    &[type="number"],
+    &[type="date"],
+    &[type="time"] {
+        color: $white;
+    }
+}
+
+.form-input {
+    background-color: $almost-black;
+    border: 1px solid $slightly-black;
+
+    &:focus {
+        background-color: lighten($almost-black, 4%);
+    }
+}
+
+.footer {
+    background-color: $almost-black;
+}
+
+.footer-nav-list-item-link {
+    color: $white;
+}
+
+.footer-copyright {
+    color: $white;
+}
+
+.footer-nav {
+    border-color: #444;
+}
+
+.nav-list-item-link,
+.footer-nav-list-item-link,
+.footer-social-list-item-link-logo {
+    &:hover {
+        color: $primary;
+    }
+}
